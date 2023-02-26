@@ -37,7 +37,7 @@ class PatchPredictor(NIC_Predictor):
         self.uncertainty_dotype = uncertainty_dotype
 
     def predict_sample(self, model, sample_in):
-        assert isinstance(sample_in, NIC_Image)
+        # assert isinstance(sample_in, NIC_Image)
         print("Predicting sample with id:{}".format(sample_in.id))
 
         sample = zeropad_sample(sample_in, self.zeropad_shape)
