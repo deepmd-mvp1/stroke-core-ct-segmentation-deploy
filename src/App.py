@@ -24,6 +24,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 * 1024 * 1024
 
 # Get current path
 path = os.getcwd()
+params=None
 # file Upload
 UPLOAD_FOLDER = "/home/input"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
