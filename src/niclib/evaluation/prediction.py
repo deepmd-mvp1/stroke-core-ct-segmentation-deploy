@@ -38,7 +38,7 @@ class PatchPredictor(NIC_Predictor):
 
     def predict_sample(self, model, sample_in):
         # assert isinstance(sample_in, NIC_Image)
-        print("Predicting sample with id:{}".format(sample_in.id))
+        # print("Predicting sample with id:{}".format(sample_in.id))
 
         sample = zeropad_sample(sample_in, self.zeropad_shape)
 
