@@ -24,7 +24,7 @@ class TestingPrediction:
         self.do_save_seg = save_seg
 
     def predict_test_set(self, model, test_images):
-        assert isinstance(test_images, list) and all([isinstance(img, NIC_Image) for img in test_images])
+        # assert isinstance(test_images, list) and all([isinstance(img, NIC_Image) for img in test_images])
 
         for test_img in test_images:
             # Prediction
