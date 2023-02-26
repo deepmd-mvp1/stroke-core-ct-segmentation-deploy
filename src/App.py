@@ -28,6 +28,8 @@ params=None
 # file Upload
 UPLOAD_FOLDER = "/home/input"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+with open('./config.txt', 'r') as config_file:
+        params = json.loads(config_file.read())  # use `json.dumps` to do the reverse
 
 models_dict_pathfile = os.path.join('./', 'models.txt')
 with open(models_dict_pathfile, 'r') as models_file:
