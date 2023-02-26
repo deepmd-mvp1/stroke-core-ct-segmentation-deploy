@@ -1,1 +1,6 @@
-{}
+{
+            'execution': 'inference',
+            'dataset_path': "",
+            'skull_stripping':  1,
+            'pretrained_name': "isles18",
+}
