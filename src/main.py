@@ -27,7 +27,7 @@ from art import tprint
 
 def launch_code():
     # Read config
-    with open('/storage/config.txt', 'r') as config_file:
+    with open('./config.txt', 'r') as config_file:
         config_dict = json.loads(config_file.read())  # use `json.dumps` to do the reverse
 
     # Launch script
@@ -262,10 +262,7 @@ def run_inference(params=None):
 
 if __name__ == '__main__':
     # launch_code()
-    params = {
-                "execution": "inference",
-                "dataset_path": "my_isles18_testing.txt",
-                "skull_stripping":  1,
-                "pretrained_name": "isles18"
-            }
-    run_inference(params)
+    with open('./config.txt', 'r') as config_file:
+        config_dict = json.loads(config_file.read())  # use `json.dumps` to do the reverse
+
+    run_inference(config_dict)
