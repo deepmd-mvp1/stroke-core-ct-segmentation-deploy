@@ -72,7 +72,7 @@ class DataTXT(NIC_Dataset):
             gt_filepath = case_filepaths[-1]
 
             # 1. Load original modalities
-            original_images = [nib.load(fp).get_data() for fp in original_filepaths] # Omit gt?
+            original_images = [nib.load(fp).get_fdata() for fp in original_filepaths] # Omit gt?
 
             if self.do_skull_strip:
                 original_images[0] = skull_strip_ct_isles18(original_images[0], original_images[1:])
@@ -80,7 +80,7 @@ class DataTXT(NIC_Dataset):
             # Add also the symmetric modalities
             symmetric_images = []
             if self.symmetric_dict is not None:
-                symmetric_images = [nib.load(self.symmetric_dict[fp] + '.gz').get_data() for fp in original_filepaths]
+                symmetric_images = [nib.load(self.symmetric_dict[fp] + '.gz').get_fdata() for fp in original_filepaths]
                 if self.do_skull_strip:
                     symmetric_images[0] = skull_strip_ct_isles18(symmetric_images[0], symmetric_images[1:])
 
@@ -88,7 +88,7 @@ class DataTXT(NIC_Dataset):
             all_images = original_images + symmetric_images
 
             # 2. Load ground_truth
-            gt = nib.load(gt_filepath).get_data()
+            gt = nib.load(gt_filepath).get_fdata()
             gt = np.expand_dims(gt, axis=0)
 
             # 3. Put everything in dataset
