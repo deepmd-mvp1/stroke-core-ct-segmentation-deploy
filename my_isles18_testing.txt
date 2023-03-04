@@ -1,0 +1,6 @@
+/home/ubuntu/storage1/ISLES2018/TESTING/case_1/SMIR.Brain.XX.O.CT.346291/SMIR.Brain.XX.O.CT.346291.nii
+/home/ubuntu/storage1/ISLES2018/TESTING/case_1/SMIR.Brain.XX.O.CT_CBF.346292/SMIR.Brain.XX.O.CT_CBF.346292.nii
+/home/ubuntu/storage1/ISLES2018/TESTING/case_1/SMIR.Brain.XX.O.CT_CBV.346293/SMIR.Brain.XX.O.CT_CBV.346293.nii
+/home/ubuntu/storage1/ISLES2018/TESTING/case_1/SMIR.Brain.XX.O.CT_MTT.346294/SMIR.Brain.XX.O.CT_MTT.346294.nii
+/home/ubuntu/storage1/ISLES2018/TESTING/case_1/SMIR.Brain.XX.O.CT_Tmax.346297/SMIR.Brain.XX.O.CT_Tmax.346297.nii
+ 

@@ -89,7 +89,6 @@ def Prediction():
             file.save(inputDir +"/" +filename)
             test_pred = TestingPrediction(predictor=predictor, out_path=results_path, save_probs=True, save_seg=False)
             test_pred.predict_test_set(model_def, files)
-            result = infer(inputDir,filename)
             
             return send_file(inputDir +"/" + "pred.jpg", mimetype="image/jpg")
 

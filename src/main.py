@@ -199,9 +199,9 @@ def run_training(params=None):
 
 def run_inference(params=None):
     formatted_datetime = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
-    results_path = '/results/results_{}_{}/'.format(formatted_datetime, params['pretrained_name'])
+    results_path = './results/results_{}_{}/'.format(formatted_datetime, params['pretrained_name'])
 
-    models_dict_pathfile = os.path.join('/storage/', 'models.txt')
+    models_dict_pathfile = os.path.join('./', 'models.txt')
     with open(models_dict_pathfile, 'r') as models_file:
         pretrained_dict = json.loads(models_file.read())  # use `json.dumps` to do the reverse
 
@@ -261,4 +261,11 @@ def run_inference(params=None):
 
 
 if __name__ == '__main__':
-    launch_code()
+    # launch_code()
+    params = {
+                "execution": "inference",
+                "dataset_path": "my_isles18_testing.txt",
+                "skull_stripping":  1,
+                "pretrained_name": "isles18"
+            }
+    run_inference(params)

@@ -1,6 +1,6 @@
 {
     "execution": "inference",
-    "dataset_path": "",
+    "dataset_path": "my_isles18_testing.txt",
     "skull_stripping":  1,
     "pretrained_name": "isles18"
 }
