@@ -13,7 +13,7 @@ def read_volume(filename):
         filename = filename[:-3] if filename.endswith('.gz') else filename + '.gz'
         nib_file = load_nib_file(filename)
 
-    return nib_file.get_data()
+    return nib_file.get_fdata()
 
 def load_nib_file(filename):
     return nib.load(filename)

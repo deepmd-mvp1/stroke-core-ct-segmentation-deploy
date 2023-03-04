@@ -35,7 +35,7 @@ class ISBIsynth(NIC_Dataset):
                 filepath = case_folder + '{}.nii.gz'.format(modality)
 
                 nib_file = nib.load(filepath)
-                vol = nib_file.get_data()
+                vol = nib_file.get_fdata()
 
                 if not initialized:
                     image_data = np.zeros((len(modalities),) + vol.shape)
@@ -44,7 +44,7 @@ class ISBIsynth(NIC_Dataset):
                     initialized = True
                 image_data[m_idx] = vol
 
-            labels[0] = nib.load(case_folder + 'lesionMask.nii.gz').get_data()
+            labels[0] = nib.load(case_folder + 'lesionMask.nii.gz').get_fdata()
 
             sample = NIC_Image(
                 sample_id=case_name,

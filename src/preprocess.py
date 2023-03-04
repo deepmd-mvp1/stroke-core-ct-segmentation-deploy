@@ -30,7 +30,7 @@ def augment_symmetric_modality(filepath_in, path_out, additional_filepaths=None,
 
 
     original_nib = nib.load(ct_path)
-    original_data = original_nib.get_data()
+    original_data = original_nib.get_fdata()
 
     # Flip and save "flipped image"
     flipped_data = np.flip(original_data, axis=0)
@@ -59,7 +59,7 @@ def augment_symmetric_modality(filepath_in, path_out, additional_filepaths=None,
             sym_mod_path = os.path.join(path_out, '{}_{}'.format(prefix, filename_add))
 
             original_nib = nib.load(mod_path)
-            original_data = original_nib.get_data()
+            original_data = original_nib.get_fdata()
 
             # Flip and save "flipped image"
             flipped_data = np.flip(original_data, axis=0)

@@ -41,14 +41,14 @@ class Isles2015_SPES(NIC_Dataset):
                     filepath_gz = filepath + '.gz'
                     nib_file = nib.load(filepath_gz)
 
-                vol = nib_file.get_data()
+                vol = nib_file.get_fdata()
                 if not initialized:
                     image_data = np.zeros((len(modalities),) + vol.shape)
                     nib_nifty = nib_file
                     labels = np.zeros((1,) + vol.shape)
                     initialized = True
                 image_data[m_idx] = vol
-            labels[0] = nib.load(case_folder + 'OT.nii').get_data()
+            labels[0] = nib.load(case_folder + 'OT.nii').get_fdata()
 
             sample = NIC_Image(
                 sample_id=case_idx + 1,
@@ -72,7 +72,7 @@ class Isles2015_SPES(NIC_Dataset):
                 try: nib_file = nib.load(filepath)
                 except Exception as e: nib_file = nib.load(filepath[:-3] if filepath.endswith('.gz') else filepath + '.gz')
 
-                vol = nib_file.get_data()
+                vol = nib_file.get_fdata()
 
                 if not initialized:
                     image_data = np.zeros((len(modalities),) + vol.shape)

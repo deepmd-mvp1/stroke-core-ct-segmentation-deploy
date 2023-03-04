@@ -13,7 +13,7 @@ class Atlas_R11(NIC_Dataset):
         print("Loading ATLAS dataset...")
 
         dataset_path = os.path.expanduser(path)
-        mni_brain_mask = nib.load(os.path.join(os.path.expanduser('~/atlases/'), 'atlas_brain_mask.nii.gz')).get_data()
+        mni_brain_mask = nib.load(os.path.join(os.path.expanduser('~/atlases/'), 'atlas_brain_mask.nii.gz')).get_fdata()
 
         """
         img = nib.Nifti1Image(mni_brain_mask.astype('uint8'), np.eye(4))
@@ -37,7 +37,7 @@ class Atlas_R11(NIC_Dataset):
 
                 # Load volume to check dimensions (not the same for all train samples)
                 nib_file = nib.load(t1_path)
-                vol = nib_file.get_data()
+                vol = nib_file.get_fdata()
 
                 data = np.zeros((len(modalities),) + vol.shape, dtype='float32')
                 labels = np.zeros((1,) + vol.shape, dtype='float32')
@@ -48,7 +48,7 @@ class Atlas_R11(NIC_Dataset):
 
                 # LABELS
                 for lesion_file in lesion_paths:
-                    labels = np.logical_or(nib.load(lesion_file).get_data() > 0, labels)
+                    labels = np.logical_or(nib.load(lesion_file).get_fdata() > 0, labels)
 
                 sample = NIC_Image(sample_id, nib_file, data, foreground_mask, labels)
                 self.train.append(sample)

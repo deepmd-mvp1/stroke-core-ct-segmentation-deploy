@@ -53,7 +53,7 @@ def load_result_set(result_path, original_images, filename_gen=None, result_type
             print("NOT FOUND: {}".format(result_pathfile))
             continue
 
-        result_set[image.id] = nib.load(result_pathfile).get_data()
+        result_set[image.id] = nib.load(result_pathfile).get_fdata()
 
     print("Loaded result set with {} images out of {} possible ones".format(len(result_set), len(original_images)))
     return result_set
