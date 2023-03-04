@@ -199,7 +199,7 @@ def run_training(params=None):
 
 def run_inference(params=None):
     formatted_datetime = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
-    results_path = './results/results_{}_{}/'.format(formatted_datetime, params['pretrained_name'])
+    results_path = 'results/results_{}_{}/'.format(formatted_datetime, params['pretrained_name'])
 
     models_dict_pathfile = os.path.join('./', 'models.txt')
     with open(models_dict_pathfile, 'r') as models_file:
