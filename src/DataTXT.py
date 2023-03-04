@@ -43,6 +43,7 @@ class DataTXT(NIC_Dataset):
         # Check that
         self.symmetric_dict = None
         print("symmetry is ...",symmetry)
+        symmetry = False
         if symmetry is True:
             storage_path = "./"
             with open(os.path.join(storage_path, 'symmetry.txt'), 'r') as config_file:
