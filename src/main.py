@@ -219,6 +219,7 @@ def run_inference(params=None):
     dataset.load()
 
     # assert that num modalities is respected
+    print("dataset.train ::",dataset.train)
     for case in dataset.train:
         print("case.data length ::",len(case.data))
         assert len(case.data) == pretrained_num_mods, \
