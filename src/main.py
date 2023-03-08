@@ -220,6 +220,7 @@ def run_inference(params=None):
 
     # assert that num modalities is respected
     for case in dataset.train:
+        print("case.data length ::",case.data)
         assert len(case.data) == pretrained_num_mods, \
             "Trained number of modalities doesn't match inference images"
 
